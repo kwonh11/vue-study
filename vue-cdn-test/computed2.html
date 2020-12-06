@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <title>computed</title>
+  </head>
+  <body>
+    <div id="root">
+      <input type="text" @input="onChange" />
+      <input type="checkbox" @change="onChangeCheckbox" value="ㅇㅇ"> ㅇㅇ </input>
+      <div>
+        <div v-for="item in filtered">{{item}}</div>
+      </div>
+    </div>
+    <script>
+      const clist = new Vue({
+        el: "#root",
+        data: {
+          input: "",
+          countryname: "",
+          countries: [
+            { name: "aaa", region: "asia" },
+            { name: "aabb", region: "africa" },
+            { name: "aac", region: "america" },
+            { name: "aad", region: "america" },
+            { name: "bba", region: "america" },
+            { name: "bbc", region: "america" },
+            { name: "bbd", region: "america" },
+          ],
+        },
+        computed: {
+          filtered: function () {
+            const cname = this.countryname.trim();
+            return this.countries.filter(function (item, index) {
+              if (item.name.indexOf(cname) > -1) {
+                return true;
+              }
+            });
+          },
+        },
+        methods: {
+          onChange(e) {
+            console.log(e.target.value);
+          },
+          onChangeCheckbox(e) {
+            console.log(e.target.value);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

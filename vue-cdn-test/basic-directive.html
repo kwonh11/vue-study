@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>basic directive</title>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="simple">
+      <input id="a" type="text" v-model="message" />
+      <div>{{ message }}</div>
+      <br />
+      <img v-bind:src="imagePath" />
+    </div>
+    <script>
+      const model = {
+        message: "첫 번 째 Vue.js앱입니다.",
+        imagePath: "http://sample.bmaster.kro.kr/photos/61.jpg",
+      };
+      const simple = new Vue({
+        el: "#simple",
+        data: model,
+      });
+    </script>
+  </body>
+</html>

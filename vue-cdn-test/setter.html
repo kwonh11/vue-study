@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <title>computed</title>
+  </head>
+  <body>
+    <div id="example">{{ num }}</div>
+    <script>
+      const a = new Vue({
+        el: "#example",
+        data: { num: 100 },
+        computed: {
+          amount: {
+            get: function () {},
+            set: function (newValue) {
+              this.num = newValue;
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

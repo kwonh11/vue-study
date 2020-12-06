@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>basic directive</title>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="test">{{name}}</div>
+    <div id="test2">{{name}}</div>
+    <script>
+      const model = {
+        name: "홍길동",
+      };
+      const app = new Vue({
+        el: "#test",
+        data: model,
+      });
+    </script>
+  </body>
+</html>

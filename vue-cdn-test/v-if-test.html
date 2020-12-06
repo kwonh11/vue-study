@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>basic directive</title>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="account">
+      잔고 : <input type="text" v-model="balance" />
+      <br />
+      <span v-if="balance >= 100000"> Gold </span>
+      <span v-else-if="balance >= 50000"> Silver </span>
+      <span v-else-if="balance >= 10000"> Bronze </span>
+    </div>
+    <script>
+      const simple1 = new Vue({
+        el: "#account",
+        data: {
+          balance: 0,
+        },
+      });
+    </script>
+  </body>
+</html>

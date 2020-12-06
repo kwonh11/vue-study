@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>basic directive</title>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="example">
+      <select id="regions">
+        <option disabled="disabled" selected>지역을 선택하세요</option>
+        <option v-for="(val, key) in regions" v-bind:value="key">
+          {{val}}
+        </option>
+      </select>
+    </div>
+    <script>
+      const simple1 = new Vue({
+        el: "#example",
+        data: {
+          regions: {
+            A: "Asia",
+            B: "America",
+            C: "Europe",
+            D: "Africa",
+            E: "Oceania",
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
